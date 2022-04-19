@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container body-content">
+        <div class="parking-example panel panel-primary">
+            <div class="panel-heading panel-head">停车记录</div>
+            <div class="panel-body">
+                <form action="search" method="post">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-2">
+                                <a id="createModal" href="/create" class="btn btn-success">
+                                    <div><span class="glyphicon glyphicon-plus"></span> 增加记录</div>
+                                </a>
+                            </div>
+                            <div class="col-sm-5 col-md-6 pull-right">
+                                <div class="input-group">
+                                    <input class="form-control" type="text" placeholder="请输入车牌" id="car_plate"
+                                           name="car_plate">
+                                    <span class="input-group-btn">
+							<button class="btn btn-default" type="submit"><span
+                                    class="glyphicon glyphicon-search"></span></button>
+						</span>
+                                    <span class="input-group-btn">
+							<a class="btn btn-default" href="/"><span class="glyphicon glyphicon-home"></span></a>
+						</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="col-sm-12" style='overflow:scroll; overflow-x: auto; overflow-y: auto; height:400px;'>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>
+                                流水号
+                            </th>
+                            <th>
+                                车牌
+                            </th>
+                            <th>
+                                入场时间
+                            </th>
+                            <th>
+                                出场时间
+                            </th>
+                            <th>
+                                命令
+                            </th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for car in cars %}
+                            <tr>
+                                <td>
+                                    {{ car['ID'] }}
+                                </td>
+                                <td>
+                                    {{ car['car_plate'] }}
+                                </td>
+                                <td>
+                                    {{ car['checkin_time'] }}
+                                </td>
+                                <td>
+                                    {{ car['checkout_time'] }}
+                                </td>
+                                <td>
+                                    <a class="btn btn-success" href="/{{ car['ID'] }}/update">编辑</a>
+                                    <a class="btn btn-danger" href="/{{ car['ID'] }}/delete">删除</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+	

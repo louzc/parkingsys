@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container body-content">
+        <div class="parking-example panel panel-primary">
+            <div class="panel-heading panel-head">停车记录查询</div>
+            <div class="panel-body">
+                <form action="query" method="post">
+                    <div class="col-md-3 form-group">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="请输入车牌" id="car_plate" name="car_plate">
+                            <span class="input-group-btn">
+							<button class="btn btn-default" type="submit"><span
+                                    class="glyphicon glyphicon-search"></span></button>
+						</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <div class="input-group">
+                            <p class="text-primary"> 车牌号码：{{ car_plate }} </p>
+                            <p class="text-primary"> 入场时间：{{ checkin_time }} </p>
+                            <p class="text-primary"> 出场时间：{{ checkout_time }} </p>
+                            <p class="text-primary"> 待付车费：{{ fee }}</p>
+                        </div>
+                    </div>
+                </form>
+                <div>
+                </div>
+            </div>
+
+        </div>
+{% endblock %}
