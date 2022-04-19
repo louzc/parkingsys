@@ -25,9 +25,9 @@
 
 3.1 先在命令提示符程序中，进入程序所在目录，如`C:\ch2.4\ParkingSys`
 
-3.2激活虚拟环境：执行`.\venv\Scripts\activate`
+3.2 激活虚拟环境：执行`.\venv\Scripts\activate`
 
-3.3设置FLASK APP信息：分别执行下面的命令：
+3.3 设置FLASK APP信息：分别执行下面的命令：
 ```
 set FLASK_APP=run.py
 set FLASK_ENV=development
