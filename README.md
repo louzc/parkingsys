@@ -1,4 +1,5 @@
-# parkingsys_python停车模拟系统
+# parkingsys停车模拟系统
+基于python vene
 ## 1. 为模拟程序设置虚拟环境：
 以下设置过程只需要做一次即可
 
